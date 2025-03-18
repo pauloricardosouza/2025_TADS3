@@ -1,4 +1,6 @@
-<div class="container-fluid text-center mt-5 mb-5">
+<?php include "header.php" ?>
+
+<div class="container text-center mb-3 mt-3">
     
     <h2>Cadastrar Produto:</h2>
     <div class="d-flex justify-content-center mb-3">
@@ -37,3 +39,5 @@
     <br>
 
 </div>
+
+<?php include "footer.php" ?>

@@ -1,4 +1,6 @@
-<div class="container-fluid text-center">
+<?php include "header.php" ?>
+
+<div class="container text-center mb-3 mt-3">
 
     <h2>Cadastro de Usuário:</h2>
     <div class="d-flex justify-content-center mb-3">
@@ -63,3 +65,5 @@
 
 </div>
                 
+
+<?php include "footer.php" ?>

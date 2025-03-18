@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Genérico</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-
-        <div class="p-3 text-center">
-            <a href="index.php" title="Clique no logo para retornar ao início">
-                <img src="img/generico_logo.png" alt="Logotipo" style='width: 150px;'>
-            </a>
-        </div>
-
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="formProduto.php">Cadastrar Produto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="formLogin.php">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+<?php include "header.php"; ?>
+        
         <div class="container mt-5 mb-5">
             <div class="alert alert-info text-center">Há <strong>X</strong> produtos cadastrados!</div>
             <form name="formFiltro" action="index.php" method="GET">
@@ -77,9 +41,4 @@
             </div>
         </div>
 
-        <div class="mt-5 p-2 bg-dark text-white text-center fixed-bottom">
-            <p>Sistema Genérico desenvolvido nas aulas de Programação Web do curso de TADS - <?php echo $anoAtual = date('Y')?>	&copy;</p>
-        </div>
-
-    </body>
-</html>
+<?php include "footer.php" ?>

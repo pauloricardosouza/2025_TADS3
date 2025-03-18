@@ -1,3 +1,5 @@
+<?php include "header.php" ?>
+
 <div class="container text-center mt-5 mb-5">
 
     <div class="row text-center">
@@ -62,3 +64,5 @@
     </div>
 
 </div>
+
+<?php include "footer.php" ?>

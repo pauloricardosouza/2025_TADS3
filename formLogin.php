@@ -1,4 +1,6 @@
-<div class="container text-center mt-5 mb-5">
+<?php include "header.php" ?>
+
+<div class="container text-center mb-3 mt-3">
 
     <h2>Acessar o Sistema:</h2>
     <div class="d-flex justify-content-center mb-3">
@@ -30,3 +32,5 @@
     </p>
 
 </div>
+
+<?php include "footer.php" ?>
