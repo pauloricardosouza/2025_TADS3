@@ -13,12 +13,21 @@
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback"></div>
                     </div>
+
                     <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome" name="nomeUsuario" required>
                         <label for="nomeUsuario">Nome Completo</label>
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback"></div>
                     </div>
+
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="date" class="form-control" id="dataNascimentoUsuario" placeholder="Data de Nascimento" name="dataNascimentoUsuario" required>
+                        <label for="dataNascimentoUsuario">Data de Nascimento</label>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
                     <div class="form-floating mb-3 mt-3">
                         <select class="form-select" id="cidadeUsuario" name="cidadeUsuario" required>
                             <option value="curiuva">Curiúva</option>
@@ -32,6 +41,7 @@
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback"></div>
                     </div>
+
                     <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control" id="telefoneUsuario" placeholder="Telefone" name="telefoneUsuario" required>
                         <label for="telefoneUsuario">Telefone</label>
