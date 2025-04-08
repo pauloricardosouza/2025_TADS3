@@ -121,10 +121,10 @@
         }
         else{
             //Armazena o valor na variável
-            $senhaUsuario = testar_entrada($_POST["senhaUsuario"]);
+            $senhaUsuario = md5(testar_entrada($_POST["senhaUsuario"]));
         }
 
-        //Validação do campo senhaUsuario
+        //Validação do campo confirmarSenhaUsuario
         //Utiliza a função empty para verificar se o campo está vazio
         if(empty($_POST["confirmarSenhaUsuario"])){
             echo "<div class='alert alert-warning text-center'>
@@ -135,7 +135,7 @@
         }
         else{
             //Armazena o valor na variável
-            $confirmarSenhaUsuario = testar_entrada($_POST["confirmarSenhaUsuario"]);
+            $confirmarSenhaUsuario = md5(testar_entrada($_POST["confirmarSenhaUsuario"]));
             if($senhaUsuario != $confirmarSenhaUsuario){
                 echo "<div class='alert alert-warning text-center'>
                         As <strong>SENHAS</strong> não conferem!
@@ -188,42 +188,59 @@
 
         }
 
+        //Se não houver erro de preenchimento ou erro de upload
         if(!$erroPreenchimento && !$erroUpload){
-            echo "<div class='alert alert-success text-center'>
-                        Usuário(a) cadastrado(a) com sucesso!
-                    </div>";
-            
-            echo "<div class='container mt-3'>
-                    <div class='mt-3 text-center'>
-                        $fotoUsuario
+
+            //Criar uma QUERY responsável por realizar a inserção dos dados no BD
+            $inserirUsuario = "INSERT INTO Usuarios (fotoUsuario, nomeUsuario, dataNascimentoUsuario, cidadeUsuario, telefoneUsuario, emailUsuario, senhaUsuario)
+                                VALUES ('$fotoUsuario', '$nomeUsuario', '$dataNascimentoUsuario', '$cidadeUsuario', '$telefoneUsuario', '$emailUsuario', '$senhaUsuario') ";
+
+            //Inclui o arquivo de conexão com o BD
+            include "conexaoBD.php";
+
+            //Se a query for executada com sucesso, exibe mensagem e tabela
+            if(mysqli_query($conn, $inserirUsuario)){
+
+                echo "<div class='alert alert-success text-center'>Usuário(a) cadastrado(a) com sucesso!</div>";
+                
+                echo "<div class='container mt-3'>
+                        <div class='mt-3 text-center'>
+                            <img src='$fotoUsuario' style='width:150px' title='Foto de $nomeUsuario'>
+                        </div>
+                        <div class='table-responsive'>
+                            <table class='table'>
+                                <tr>
+                                    <th>NOME</th>
+                                    <td>$nomeUsuario</td>
+                                </tr>
+                                <tr>
+                                    <th>DATA DE NASCIMENTO</th>
+                                    <td>$dia/$mes/$ano</td>
+                                </tr>
+                                <tr>
+                                    <th>CIDADE</th>
+                                    <td>$cidadeUsuario</td>
+                                </tr>
+                                <tr>
+                                    <th>TELEFONE</th>
+                                    <td>$telefoneUsuario</td>
+                                </tr>
+                                <tr>
+                                    <th>EMAIL</th>
+                                    <td>$emailUsuario</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class='table-responsive'>
-                        <table class='table'>
-                            <tr>
-                                <th>NOME</th>
-                                <td>$nomeUsuario</td>
-                            </tr>
-                            <tr>
-                                <th>DATA DE NASCIMENTO</th>
-                                <td>$dia/$mes/$ano</td>
-                            </tr>
-                            <tr>
-                                <th>CIDADE</th>
-                                <td>$cidadeUsuario</td>
-                            </tr>
-                            <tr>
-                                <th>TELEFONE</th>
-                                <td>$telefoneUsuario</td>
-                            </tr>
-                            <tr>
-                                <th>EMAIL</th>
-                                <td>$emailUsuario</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            
-            ";
+                
+                ";
+            }
+            //Se não conseguir inserir dados do Usuário na base de dados, emite alerta danger
+            else{
+                echo "<div class='alert alert-danger text-center'>
+                            Erro ao tentar inserir dados do <strong>Usuário</strong> na base de dados!
+                        </div>";
+            }
         }
 
     }
