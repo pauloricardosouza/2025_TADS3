@@ -232,8 +232,8 @@
                             </table>
                         </div>
                     </div>
-                
                 ";
+                mysqli_close($conn); //Encerra a conexão com o banco de dados
             }
             //Se não conseguir inserir dados do Usuário na base de dados, emite alerta danger
             else{
@@ -242,7 +242,6 @@
                         </div>";
             }
         }
-
     }
     else{
         //Redireciona para a página formUsuario.php

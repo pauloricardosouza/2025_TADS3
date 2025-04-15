@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/04/2025 às 03:41
+-- Tempo de geração: 15/04/2025 às 03:15
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `generico`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produtos`
+--
+
+CREATE TABLE `produtos` (
+  `idProduto` int NOT NULL,
+  `fotoProduto` varchar(100) NOT NULL,
+  `nomeProduto` varchar(30) NOT NULL,
+  `descricaoProduto` varchar(200) NOT NULL,
+  `valorProduto` decimal(10,0) NOT NULL,
+  `statusProduto` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`idProduto`, `fotoProduto`, `nomeProduto`, `descricaoProduto`, `valorProduto`, `statusProduto`) VALUES
+(1, 'img/xbox360.webp', 'Xbox 360', 'Console Microsoft Xbox 360 Slim', 300, 'disponivel'),
+(2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Bla bla bla', 400, 'disponivel');
 
 -- --------------------------------------------------------
 
@@ -50,6 +73,12 @@ INSERT INTO `usuarios` (`idUsuario`, `fotoUsuario`, `nomeUsuario`, `dataNascimen
 --
 
 --
+-- Índices de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`idProduto`);
+
+--
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -58,6 +87,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `idProduto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
