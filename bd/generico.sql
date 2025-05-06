@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/04/2025 às 03:15
+-- Tempo de geração: 06/05/2025 às 03:13
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,7 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`idProduto`, `fotoProduto`, `nomeProduto`, `descricaoProduto`, `valorProduto`, `statusProduto`) VALUES
 (1, 'img/xbox360.webp', 'Xbox 360', 'Console Microsoft Xbox 360 Slim', 300, 'disponivel'),
-(2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Bla bla bla', 400, 'disponivel');
+(2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Old School Bla bla bla', 400, 'esgotado');
 
 -- --------------------------------------------------------
 
