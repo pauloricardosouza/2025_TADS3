@@ -23,7 +23,7 @@
                         case "todos" : $mensagemFiltro = "no total";
                         break;
 
-                        case "disponivel" : $mensagemFiltro = "disponíveis";
+                        case "disponivel" : $mensagemFiltro = "disponível";
                         break;
 
                         case "esgotado" : $mensagemFiltro = "esgotados";
@@ -89,7 +89,7 @@
 
                                 <div class='card' style='width:100%; height:100%;'>
                                     <div class='card-body' style='height:100%'>
-                                        <a href='visualizarProduto.php' style='text-decoration:none;' title='Visualizar mais detalhes de $nomeProduto'>
+                                        <a href='visualizarProduto.php?idProduto=$idProduto' style='text-decoration:none;' title='Visualizar mais detalhes de $nomeProduto'>
                                             <img class='card-img-top' src='$fotoProduto' alt='Foto de $nomeProduto' "; if($statusProduto == 'esgotado'){echo "style='filter:grayscale(100%)';";} echo">
                                         </a>
                                     </div>
@@ -97,7 +97,7 @@
                                         <h4 class='card-title'>$nomeProduto</h4>
                                         <p class='card-text'>Valor: <b>R$ $valorProduto</b></p>
                                         <div class='d-grid' style='border-size:border-box'>
-                                            <a class='btn btn-success' href='visualizarProduto.php' style='text-decoration:none;'  title='Visualizar $nomeProduto'>
+                                            <a class='btn btn-success' href='visualizarProduto.php?idProduto=$idProduto' style='text-decoration:none;' title='Visualizar mais detalhes de $nomeProduto'>
                                                 Visualizar Produto
                                             </a>  
                                         </div>
