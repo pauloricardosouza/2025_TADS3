@@ -50,13 +50,13 @@
                                     <!-- The slideshow/carousel -->
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="img/generico_logo.png" alt="Nome do Produto" class="d-block" style="width:100%">
+                                            <img src="<?php echo $fotoProduto ?>" alt="Nome do Produto" class="d-block" <?php if($statusProduto == 'esgotado') {echo "style='width: 100%; filter:grayscale(100%)'";} else {echo "style='width:100%'";}?> >
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="img/generico_logo.png" alt="Nome do Produto" class="d-block" style="width:100%">
+                                            <img src="<?php echo $fotoProduto ?>" alt="Nome do Produto" class="d-block" <?php if($statusProduto == 'esgotado') {echo "style='width: 100%; filter:grayscale(100%)'";} else {echo "style='width:100%'";}?> >
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="img/generico_logo.png" alt="Nome do Produto" class="d-block" style="width:100%">
+                                            <img src="<?php echo $fotoProduto ?>" alt="Nome do Produto" class="d-block" <?php if($statusProduto == 'esgotado') {echo "style='width: 100%; filter:grayscale(100%)'";} else {echo "style='width:100%'";}?> >
                                         </div>
                                     </div>
 
@@ -70,15 +70,15 @@
                                 </div>
                                 
                                 <div class="card-body">
-                                    <h4 class="card-title"><b>Nome do Produto</b></h4>
-                                    <p class="card-text">Descrição do Produto</p>
-                                    <p class="card-text">Valor: <b>R$ Valor do Produto</b></p>
+                                    <h4 class="card-title"><b><?php echo $nomeProduto ?></b></h4>
+                                    <p class="card-text"><?php echo $descricaoProduto ?></p>
+                                    <p class="card-text">Valor: <b>R$ <?php echo $valorProduto ?></b></p>
                                     <div class="card bg-light">
                                         <div class="card-body">
-                                            <a href="#" title="Realizar Pedido">
+                                            <a href="#" title="Efetuar Compra">
                                                 <button class="btn btn-outline-success">
                                                     <i class="bi bi-clipboard-plus" style="font-size:16pt;"></i>
-                                                    Realizar Pedido
+                                                    Efetuar Compra
                                                 </button>
                                             </a>
                                         </div>

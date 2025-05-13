@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/05/2025 às 03:13
+-- Tempo de geração: 13/05/2025 às 03:09
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`idProduto`, `fotoProduto`, `nomeProduto`, `descricaoProduto`, `valorProduto`, `statusProduto`) VALUES
 (1, 'img/xbox360.webp', 'Xbox 360', 'Console Microsoft Xbox 360 Slim', 300, 'disponivel'),
-(2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Old School Bla bla bla', 400, 'esgotado');
+(2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Old School Bla bla bla', 400, 'esgotado'),
+(3, 'img/Fusca_Azul.jpeg', 'Fusca', 'VW Fusca Azul 1972', 20000, 'disponivel');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `idProduto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idProduto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
