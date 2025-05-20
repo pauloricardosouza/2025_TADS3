@@ -1,4 +1,5 @@
 <?php include "header.php" ?>
+<?php include "validarSessao.php" ?> <!-- Assegura que esta página poderá ser acessada apenas por um usuário administrador -->
 
 <div class="container text-center mb-3 mt-3">
     

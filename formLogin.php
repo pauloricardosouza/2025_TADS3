@@ -2,6 +2,24 @@
 
 <div class="container text-center mb-3 mt-3">
 
+    <?php
+        //Verifica se há algum parâmetro chamado 'erroLogin' sendo recebido por GET
+        if(isset($_GET['erroLogin'])){
+            $erroLogin = $_GET['erroLogin']; //Variável PHP recebe o parâmetro GET
+
+            if($erroLogin == 'dadosInvalidos'){
+                echo "<div class='alert alert-warning text-center'><strong>USUÁRIO ou SENHA</strong> inválidos!</div>";
+            }
+            if($erroLogin == 'naoLogado'){
+                echo "<div class='alert alert-warning text-center'><strong>USUÁRIO</strong> não logado!</div>";
+            }
+            if($erroLogin == 'acessoProibido'){
+                //Redireciona para a página index.php
+                header('location:index.php?pagina=index');
+            }
+        }
+    ?>
+
     <h2>Acessar o Sistema:</h2>
     <div class="d-flex justify-content-center mb-3">
         <div class="row">
@@ -19,7 +37,7 @@
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback"></div>
                     </div>
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-person"></i> Login</button>
                 </form>
             </div>
         </div>

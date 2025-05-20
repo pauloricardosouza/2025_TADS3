@@ -64,7 +64,7 @@
                             <label for='filtroProduto'>Selecione um Filtro</label>
                             <br>
                         </div>
-                        <button type='submit' class='btn btn-success' style='float:right'><i class='bi bi-funnel'></i>  Filtrar Produtos</button><br>
+                        <button type='submit' class='btn btn-outline-success' style='float:right'><i class='bi bi-funnel'></i>  Filtrar Produtos</button><br>
                     </form>
                 ";
 
@@ -97,8 +97,8 @@
                                         <h4 class='card-title'>$nomeProduto</h4>
                                         <p class='card-text'>Valor: <b>R$ $valorProduto</b></p>
                                         <div class='d-grid' style='border-size:border-box'>
-                                            <a class='btn btn-success' href='visualizarProduto.php?idProduto=$idProduto' style='text-decoration:none;' title='Visualizar mais detalhes de $nomeProduto'>
-                                                Visualizar Produto
+                                            <a class='btn btn-outline-success' href='visualizarProduto.php?idProduto=$idProduto' style='text-decoration:none;' title='Visualizar mais detalhes de $nomeProduto'>
+                                                <i class='bi bi-eye'></i> Visualizar Produto
                                             </a>  
                                         </div>
                                     </div>

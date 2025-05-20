@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/05/2025 às 03:09
+-- Tempo de geração: 20/05/2025 às 03:35
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.12
 
@@ -53,6 +53,7 @@ INSERT INTO `produtos` (`idProduto`, `fotoProduto`, `nomeProduto`, `descricaoPro
 
 CREATE TABLE `usuarios` (
   `idUsuario` int NOT NULL,
+  `tipoUsuario` varchar(15) NOT NULL,
   `fotoUsuario` varchar(100) NOT NULL,
   `nomeUsuario` varchar(50) NOT NULL,
   `dataNascimentoUsuario` date NOT NULL,
@@ -66,8 +67,9 @@ CREATE TABLE `usuarios` (
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuario`, `fotoUsuario`, `nomeUsuario`, `dataNascimentoUsuario`, `cidadeUsuario`, `telefoneUsuario`, `emailUsuario`, `senhaUsuario`) VALUES
-(1, 'img/Classico_2D.webp', 'Sonic', '2025-04-05', 'telemacoBorba', '(42) 99999-9999', 'sonic@teste.com', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `usuarios` (`idUsuario`, `tipoUsuario`, `fotoUsuario`, `nomeUsuario`, `dataNascimentoUsuario`, `cidadeUsuario`, `telefoneUsuario`, `emailUsuario`, `senhaUsuario`) VALUES
+(1, 'administrador', 'img/Classico_2D.webp', 'Sonic', '2025-04-05', 'telemacoBorba', '(42) 99999-9999', 'sonic@teste.com', '202cb962ac59075b964b07152d234b70'),
+(2, 'cliente', 'img/mario.png', 'Mario Mario', '2025-05-19', 'telemacoBorba', '(42) 99999-9999', 'mario@teste.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Índices para tabelas despejadas
@@ -99,7 +101,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

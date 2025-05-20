@@ -192,8 +192,8 @@
         if(!$erroPreenchimento && !$erroUpload){
 
             //Criar uma QUERY responsável por realizar a inserção dos dados no BD
-            $inserirUsuario = "INSERT INTO Usuarios (fotoUsuario, nomeUsuario, dataNascimentoUsuario, cidadeUsuario, telefoneUsuario, emailUsuario, senhaUsuario)
-                                VALUES ('$fotoUsuario', '$nomeUsuario', '$dataNascimentoUsuario', '$cidadeUsuario', '$telefoneUsuario', '$emailUsuario', '$senhaUsuario') ";
+            $inserirUsuario = "INSERT INTO Usuarios (tipoUsuario, fotoUsuario, nomeUsuario, dataNascimentoUsuario, cidadeUsuario, telefoneUsuario, emailUsuario, senhaUsuario)
+                                VALUES ('cliente', '$fotoUsuario', '$nomeUsuario', '$dataNascimentoUsuario', '$cidadeUsuario', '$telefoneUsuario', '$emailUsuario', '$senhaUsuario') ";
 
             //Inclui o arquivo de conexão com o BD
             include "conexaoBD.php";

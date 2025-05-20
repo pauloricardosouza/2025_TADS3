@@ -77,7 +77,7 @@
                                         <div class="card-body">
                                             <a href="#" title="Efetuar Compra">
                                                 <button class="btn btn-outline-success">
-                                                    <i class="bi bi-clipboard-plus" style="font-size:16pt;"></i>
+                                                    <i class="bi bi-bag-plus" style="font-size:16pt;"></i>
                                                     Efetuar Compra
                                                 </button>
                                             </a>

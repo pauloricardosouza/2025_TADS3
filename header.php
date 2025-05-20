@@ -30,6 +30,22 @@
             </a>
         </div>
 
+        <?php
+            error_reporting(0); //Desabilita reportagens de erros de execução
+            session_start(); //Inicia sessão
+
+            if(isset($_SESSION['logado']) && $_SESSION['logado'] === true){ //Verifica se há sessão ativa
+                $idUsuario    = $_SESSION['idUsuario'];
+                $tipoUsuario  = $_SESSION['tipoUsuario'];
+                $nomeUsuario  = $_SESSION['nomeUsuario'];
+                $emailUsuario = $_SESSION['emailUsuario'];
+
+                $nomeCompleto = explode(' ', $nomeUsuario); //Usua a função explode para segmentar a string onde hoverem espaços ' '
+                $primeiroNome = $nomeCompleto[0]; //Armazena a primeira string antes do espaço (primeiro nome)
+
+            }
+        ?>
+
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -40,12 +56,33 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="index.php">Início</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="formProduto.php">Cadastrar Produto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="formLogin.php">Login</a>
-                        </li>
+                        <?php
+                            //Verifica se o tipo do usuário é 'administrador'
+                            if($tipoUsuario == 'administrador'){
+                                echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='formProduto.php'>Cadastrar Produto</a>
+                                    </li>
+                                ";
+                            }
+                            if(isset($_SESSION['logado']) && $_SESSION['logado'] === true){ //Verifica se há sessão ativa
+                                echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='logout.php?pagina=formLogin'>Sair</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' style='color:lightblue'>Olá, <strong>$primeiroNome</strong>! <i class='bi bi-emoji-smile'></i></a>
+                                    </li>
+                                ";
+                            }
+                            else{
+                                 echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='formLogin.php?pagina=formLogin'>Login</a>
+                                    </li>
+                                ";
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>
