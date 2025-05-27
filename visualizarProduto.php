@@ -75,12 +75,55 @@
                                     <p class="card-text">Valor: <b>R$ <?php echo $valorProduto ?></b></p>
                                     <div class="card bg-light">
                                         <div class="card-body">
-                                            <a href="#" title="Efetuar Compra">
-                                                <button class="btn btn-outline-success">
-                                                    <i class="bi bi-bag-plus" style="font-size:16pt;"></i>
-                                                    Efetuar Compra
-                                                </button>
-                                            </a>
+                                            <?php
+                                                //Verifica se há uma sessão iniciada
+                                                if(isset($_SESSION['logado']) && $_SESSION['logado'] === true){
+                                                    if($_SESSION['tipoUsuario'] == 'cliente'){
+                                                        if($statusProduto == 'disponivel'){
+                                                            echo "
+                                                                <form action='efetuarCompra.php' method='POST'>
+                                                                    <input type='hidden' name='idProduto' value='$idProduto'>
+                                                                    <input type='hidden' name='fotoProduto' value='$fotoProduto'>
+                                                                    <input type='hidden' name='nomeProduto' value='$nomeProduto'>
+                                                                    <input type='hidden' name='valorProduto' value='$valorProduto'>
+                                                                    <button type='submit' class='btn btn-outline-success'>
+                                                                        <i class='bi bi-bag-plus'></i>
+                                                                        Efetuar Compra
+                                                                    </button>
+                                                                </form>
+                                                            ";
+                                                        }
+                                                        else{
+                                                            echo "
+                                                                <div class='alert alert-secondary'>
+                                                                    Produto esgotado! <i class='bi bi-emoji-frown'></i>
+                                                                </div>
+                                                            ";
+                                                        }
+                                                    }
+                                                    else{
+                                                        echo "
+                                                            <form action='#formEditarProduto.php' method='POST'>
+                                                                <input type='hidden' name='idProduto' value='$idProduto'>
+                                                                <button type='submit' class='btn btn-outline-primary'>
+                                                                    <i class='bi bi-pencil-square'></i>
+                                                                    Editar Produto
+                                                                </button>
+                                                            </form>
+                                                        ";
+                                                    }
+                                                }
+                                                else{
+                                                    echo "
+                                                        <div class='alert alert-info'>
+                                                            <a href='formLogin.php' class='alert-link'>
+                                                                Acesse o sistema para poder comprar este produto! 
+                                                                <i class='bi bi-person'></i> 
+                                                            </a>
+                                                        </div>
+                                                    ";
+                                                }
+                                            ?>
                                         </div>
                                         <br>
                                     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/05/2025 às 03:35
+-- Tempo de geração: 27/05/2025 às 03:26
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `generico`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `compras`
+--
+
+CREATE TABLE `compras` (
+  `idCompra` int NOT NULL,
+  `idUsuario` int DEFAULT NULL,
+  `idProduto` int DEFAULT NULL,
+  `dataCompra` date DEFAULT NULL,
+  `horaCompra` time DEFAULT NULL,
+  `valorCompra` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `compras`
+--
+
+INSERT INTO `compras` (`idCompra`, `idUsuario`, `idProduto`, `dataCompra`, `horaCompra`, `valorCompra`) VALUES
+(1, 2, 3, '2025-05-26', '21:25:35', 20000.00);
 
 -- --------------------------------------------------------
 
@@ -43,7 +65,7 @@ CREATE TABLE `produtos` (
 INSERT INTO `produtos` (`idProduto`, `fotoProduto`, `nomeProduto`, `descricaoProduto`, `valorProduto`, `statusProduto`) VALUES
 (1, 'img/xbox360.webp', 'Xbox 360', 'Console Microsoft Xbox 360 Slim', 300, 'disponivel'),
 (2, 'img/tenisVans.jpg', 'Tênis Vans', 'Calçado Vans Old School Bla bla bla', 400, 'esgotado'),
-(3, 'img/Fusca_Azul.jpeg', 'Fusca', 'VW Fusca Azul 1972', 20000, 'disponivel');
+(3, 'img/Fusca_Azul.jpeg', 'Fusca', 'VW Fusca Azul 1972', 20000, 'esgotado');
 
 -- --------------------------------------------------------
 
@@ -76,6 +98,14 @@ INSERT INTO `usuarios` (`idUsuario`, `tipoUsuario`, `fotoUsuario`, `nomeUsuario`
 --
 
 --
+-- Índices de tabela `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`idCompra`),
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `idProduto` (`idProduto`);
+
+--
 -- Índices de tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -92,6 +122,12 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de tabela `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `idCompra` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -102,6 +138,17 @@ ALTER TABLE `produtos`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `compras`
+--
+ALTER TABLE `compras`
+  ADD CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`),
+  ADD CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`idProduto`) REFERENCES `produtos` (`idProduto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

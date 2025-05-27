@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <?php
+        //Configura o fuso horário para América/São Paulo
+        date_default_timezone_set('America/Sao_Paulo');
+    ?>
     <head>
         <title>Genérico</title>
         <meta charset="utf-8">
