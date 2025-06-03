@@ -69,6 +69,14 @@
                                     </li>
                                 ";
                             }
+                            //Verifica se o tipo do usuário é 'cliente'
+                            if($tipoUsuario == 'cliente'){
+                                echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='visualizarPedidos.php'>Visualizar Pedidos</a>
+                                    </li>
+                                ";
+                            }
                             if(isset($_SESSION['logado']) && $_SESSION['logado'] === true){ //Verifica se há sessão ativa
                                 echo "
                                     <li class='nav-item'>

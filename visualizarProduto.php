@@ -103,7 +103,7 @@
                                                     }
                                                     else{
                                                         echo "
-                                                            <form action='#formEditarProduto.php' method='POST'>
+                                                            <form action='formEditarProduto.php?idProduto=$idProduto' method='POST'>
                                                                 <input type='hidden' name='idProduto' value='$idProduto'>
                                                                 <button type='submit' class='btn btn-outline-primary'>
                                                                     <i class='bi bi-pencil-square'></i>
